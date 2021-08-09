@@ -79,7 +79,7 @@ set RHOST <IP Address>
 exploit
 ```
 This module finds the Each Unit ID of connected devices. These UNIT IDs are critical for reading and writing their data, as we will see later.
-![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/findunit_idf.png)
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/findunit_id.png)
 Our next modbus module is modbusclient. It enables us to read and write the data from both the coils and registers on these SCADA systems. 
 
 ```sh
@@ -105,7 +105,7 @@ We can read the coils to check if the value has actually changed.
 set ACTION READ_COILS
  exploit
  ``` 
- ![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/read_coils.pnfg)
+ ![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/read_coils.png)
  To write the values in the registers
   ``` sh
 set ACTION WRITE_REGISTERS
