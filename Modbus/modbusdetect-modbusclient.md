@@ -51,6 +51,7 @@ In order to see these modules, we will use the "search modbus" command after ent
 msfconsole
 search modbus
 ```
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/search-modbus.png)
 The first module we will use as an exploit is the modbusdetect module. As it name implies, it is capable of detecting whether a site is running the modbus protocol. 
 ```sh
 use auxilary/scanner/scada/modbusdetect 
@@ -78,7 +79,7 @@ set RHOST <IP Address>
 exploit
 ```
 This module finds the Each Unit ID of connected devices. These UNIT IDs are critical for reading and writing their data, as we will see later.
-
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/findunit_id.png)
 Our next modbus module is modbusclient. It enables us to read and write the data from both the coils and registers on these SCADA systems. 
 
 ```sh
@@ -104,7 +105,7 @@ We can read the coils to check if the value has actually changed.
 set ACTION READ_COILS
  exploit
  ``` 
- 
+ ![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/read_coils.png)
  To write the values in the registers
   ``` sh
 set ACTION WRITE_REGISTERS
@@ -123,7 +124,7 @@ exploit
 # Packet Analysing
 Run wireshark while exploit we’ve use running behind.
 You see the blue part. This packet is the packet to the modbus protocol we want to analyze.
-            FOTO
+            ![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202021-08-09%20174839.png)
 Double-clicking on the line will open the package content. 
 
 ***
