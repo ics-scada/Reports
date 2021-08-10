@@ -97,6 +97,6 @@ alert tcp any any -> $HOME_NET 502 (
 	reference:cve,2013-0699;
 	classtype: denial-of-service;
 	sid:1;
-	content:|01 00 00 00 01|;
+	content:"|01 00 00 00 01|";
 	detection_filter:track by_dst, count 10, seconds 1;)
 ```
