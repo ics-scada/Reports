@@ -114,14 +114,15 @@ TCP, UDP, ICMP are important protocols of the transport layer of the OSI model g
 
 The hex value of line with the value of 8448 Transaction Identifier is equal to 0x2100 and it’s query is CR. You can see the queries and values examples below.
 
-```
 
-Query	  CANOpenID  Mosbus ID (Hex)  Modbus ID (Dec)
-VAR  	  0x2106     0x20C0           8384
-SR	    0x2107     0x20E0           8416
-CR 	    0x2108     0x2100           8448
+
+| Query	|  CANOpenID | Mosbus ID (Hex) | Modbus ID (Dec) |
+| ----- | ---------- | --------------- | --------------- |
+| VAR  	| 0x2106     | 0x20C0          | 8384            |
+|SR	 |   0x2107    | 0x20E0  |         8416 |
+|CR 	|    0x2108   | 0x2100       |    8448  |
  
-```
+
 
 WHAT IS QUERY (here CR is a query): Query is a modbus message. A Modbus message is placed in a message frame by the transmitting device. A message frame is used to mark the beginning and ending point of a message allowing the receiving device to determine which device is being addressed and to know when the message is completed. It also allows partial messages to be detected and errors flagged as a result.  Each word of this message (including the frame) is also placed in a data frame that appends a start bit, stop bit, and parity bit. In ASCII mode, the word size is 7 bits, while in RTU mode, the word size is 8 bits.  Thus, every 8 bits of an RTU message is effectively 11 bits when accounting for the start, stop, and parity bits of the data frame.
 UNIT IDENTIFIER: Unit identifier is used with Modbus/TCP devices that are composites of several Modbus devices, e.g. on Modbus/TCP to Modbus RTU gateways. In such case, the unit identifier tells the Slave Address of the device behind the gateway. Natively Modbus/TCP-capable devices usually ignore the Unit Identifier
@@ -133,25 +134,28 @@ UNIT IDENTIFIER: Unit identifier is used with Modbus/TCP devices that are compos
 What does FUNCTION CODE Read Input Registers (4) do?
 This function is implemented to read exactly 4 bytes (2 registers). Issuing any messages to read other than 2 registers will return no response.
 For example to read VAR1, you need to read 2 registers from address 0x20C1 so you need to send the following RTU message:
+
 01 04 20 C1 00 02 2B F7
-```
-NAME	 DESCRIPTION
-01  	 Node address
-04	   Function code (Read Input Registers)
-20 C1	 Register address for reading VAR1
-00 02	 Length of registers to be read (must be 2)
-2B F7	 Cyclic redundancy check (CRC-16-IBM)
-```
+
+| NAME	| DESCRIPTION |
+| ---- | ----------- |
+|01  	| Node address|
+|04	  | Function code (Read Input Registers) |
+|20 C1| Register address for reading VAR1 |
+|00 02	| Length of registers to be read (must be 2)|
+|2B F7	 |Cyclic redundancy check (CRC-16-IBM)|
+
 The response for this message will be as following: 
 01 04 04 00 00 12 34 F6 F3
-```
-NAME	        DESCRIPTION
-01	          Node address
-04	          Function code (Read Input Registers)
-04	          Total bytes read (always 4 bytes)
-00 00 12 34	  Value in big Indian notation (MSB first)
-F6 F3	        Cyclic redundancy check (CRC-16-IBM)
-```
+
+| NAME	 |       DESCRIPTION |
+| ----- | ---------- |
+| 01	   |       Node address |
+| 04	   |      Function code (Read Input Registers) |
+| 04	   |     Total bytes read (always 4 bytes) |
+| 00 00 12 34 |	  Value in big Indian notation (MSB first) |
+| F6 F3	       | Cyclic redundancy check (CRC-16-IBM) |
+
 
 
 
