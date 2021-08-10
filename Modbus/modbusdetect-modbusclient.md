@@ -5,7 +5,6 @@ In this report, we will focus on modbus, the most widely used SCADA/ICS protocol
 
 This Report provides:
 
-* Mitigation details for a vulnerability affecting the Galil RIO-47100 "Pocket PLC."
 * Disclosure of exploit runs on ModBus protocol.
 * Simulating an attack scenario against Scada Honeypot (Conpot)
 * Modbus attack diagnostic functions in Wireshark
@@ -35,7 +34,8 @@ An attacker with a medium skill would be able to exploit this vulnerability.
 
 ## Affected Produtcs
 
---
+All devices using the modbus protocol.
+
 ## Impact
 
  This vulnerabilities other potential disastrous impacts of DoS attacks against SCADA/ICS systems include electrical blackouts, shutdown of water and sewage systems and other essential municipal services.
