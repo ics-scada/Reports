@@ -105,21 +105,20 @@ As you can see above, dos attack has started.
 Run wireshark while exploit we’ve use running behind.
 You see the blue part. This packet is the packet to the modbus protocol we want to analyze.
 
-```
-# burada görüntü olmalı
-```
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/wireshark1.png)
+
 Double-clicking on the line will open the package content. 
 <br>
 If we click Ethernet II line the linked parts will be highlighted. And so we can see the address information and the name of the protocol used.
-```
-# burada görüntü 2 olmalı 
-```
+
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/wireshark2.png)
+
 <br>
 IP Header holds network layer information. Of these, it keeps the information of the IPv4 protocol, which is accepted as the backbone of the OSI model, in all its details.
+<br>
 
-```
-# burada görüntü 3 olmalı 
-```
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/wireshrak3.png)
+
 <br>
 TCP, UDP, ICMP are important protocols of the transport layer of the OSI model given in the host-to-host connection. They play an important role in the error-free transmission of data. When it examines network layer information in Wireshark, you can see that TCP is used to communicate with the target device.
  
@@ -135,5 +134,6 @@ Accordingly, we can say that there is a rule used for the modicon_command module
 ```
 # burada görüntü kural olmalı 
 ```
+
 
 END
