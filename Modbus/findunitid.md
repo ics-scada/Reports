@@ -116,7 +116,7 @@ The hex value of line with the value of 8448 Transaction Identifier is equal to 
 
 
 
-| Query	|  CANOpenID | Mosbus ID (Hex) | Modbus ID (Dec) |
+| Query	|  CANOpenID | Modbus ID (Hex) | Modbus ID (Dec) |
 | ----- | ---------- | --------------- | --------------- |
 | VAR  	| 0x2106     | 0x20C0          | 8384            |
 |SR	 |   0x2107    | 0x20E0  |         8416 |
@@ -168,6 +168,6 @@ alert tcp any any -> $HOME_NET 502 (
  flow:to_server,established;
  classtype: attempted-recon;
  sid:1000005410;
- content:|04 00 01 00 00|;
+ content:"|04 00 01 00 00|";
 detection_filter:track by_dst, count 5, seconds 1;)
 ```
