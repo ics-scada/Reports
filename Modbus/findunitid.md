@@ -71,7 +71,7 @@ set RHOST <ip>
 After giving the parameters which are wanted we are ready to run it.
 
 ```
-exploit
+run
 ```
 ![run_command](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus_findunit_photos/3.PNG)
 
