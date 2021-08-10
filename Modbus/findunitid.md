@@ -160,8 +160,13 @@ The response for this message will be as following:
 
 
 ***
+#Penetration Testing
 
-# Rules 
+We performed the penetration test with the rule we wrote with the support of snort on the ubuntu device located on the same network as the victim source. 
+
+The rule we added to Snort 3 is below 
+
+## Rule
 ```
 alert tcp any any -> $HOME_NET 502 (
  msg:"MODBUS Read Input Registers -find_unitid-";
@@ -171,3 +176,12 @@ alert tcp any any -> $HOME_NET 502 (
  content:"|04 00 01 00 00|";
 detection_filter:track by_dst, count 5, seconds 1;)
 ```
+The rule is added to the snort rules and the network is listened during the attack. 
+The command required to listen to the network:
+
+```
+snort -c /usr/local/etc/snort/snort.lua --plugin-path /usr/local/etc/so_rules/ -i ens4 -A alert_full
+```
+Finally the packets captured by snort after listening are as follows
+
+![snort](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus_findunit_photos/inpt_registers_ubuntu.PNG)
