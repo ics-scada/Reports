@@ -71,9 +71,6 @@ show modules
 
 ```
 use /modbus/dos/galilRIO
-```
-
-```
 show options
 ```
 We have checked which parameters our exploit needs to run. This exploit needs; 
