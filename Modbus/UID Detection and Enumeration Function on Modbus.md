@@ -40,12 +40,15 @@ cd smod
 sudo python smod.py
 ```
 ![Smod](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/1.PNG)
+
 We can see the ModBus Frameworks’ modules by typing;
 ```sh
 show modules
 use modbus/scanner/getfunc
 show options
 ```
+![Smod-2](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/2.PNG)
+
 We have checked what parameters our exploit needs to run. This exploit needs;
 
 RHOST = remote host ip address
