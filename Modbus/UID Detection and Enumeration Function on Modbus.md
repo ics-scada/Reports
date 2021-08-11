@@ -58,31 +58,40 @@ paramateres.
 set RHOST <ip>
 set UID <uid>
 ```
+![Smod-3](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/3.PNG)
+
 After giving the parameters which are wanted we are ready to run it.
 ```sh
 exploit
 ```
+![Smod-4](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/4.PNG)
+
 Before we say exploit, we need to detect UID, and we will use the modbus/scanner/uid module in the smod tool.
 ```sh
 use modbus/scanner/uid
 show options
+```
+![UID-1](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/UID_1.PNG)
+
+```sh
 set RHOST <ip>
 exploit
 ```
+![alt text](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/UID_2.PNG)
+
 After the UID detection is performed, we can return to the other operation.
 
 For function code detection, we start the process again with the exploit command of the modbus/scanner/getfunc module and we have determined which record is running in which function code.
 
 # Packet Analysing
 We perform packet analysis from our attacker machine. Before running your module on our attacker machine, we run our wireshark tool and then run our module.
-İMAGE-1
+![Packet-Analysis-1](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/Packet_Analysis.PNG)
 
 We can see how the function code 1 is detected by saying "Modbus.func_code == 1". It is possible to see this number by increasing it in other function codes.
-İMAGE-2
-
+![Packet-Analysis-2](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/Packet_Analysis_2.PNG)
 
 Package includes "mbtcp.trans_id, mbtcp.prot_id, mbtcp.len, mbtcp.unit_id" values
-İMAGE-3
+![Packet-Analysis-3](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/Packet_Analysis_3.PNG)
 #### MBAP (Modbus Application Protocol Header) Header Section
 In Modbus TCP/IP framing, the MBAP header consists of 4 parts. The length of the MBAP header is 7 bytes. The MBAP section is for the communication function. It carries some information so that the master and slave units can communicate with each other.
 ##### Transaction Identifier 
