@@ -1,7 +1,7 @@
 # UID Detection and Enumeration Function on Modbus
 
 # Overview
-In this report, we will focus on modbus, the most widely used SCADA/ICS protocol. We will use Honeypot as the target.
+In this report, we will focus on modbus, the most widely used ICS/SCADA protocol. We will use Honeypot as the target.
 
 This Report provides:
 - Disclosure of exploit runs on ModBus protocol.
