@@ -119,8 +119,8 @@ If we click Ethernet II line the linked parts will be highlighted. And so we can
 
 <br>
 IP Header holds network layer information. Of these, it keeps the information of the IPv4 protocol, which is accepted as the backbone of the OSI model, in all its details.
-<br>
 
+<br/>
 <p align="center">
   <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/wireshrak3.png">
 </p>
