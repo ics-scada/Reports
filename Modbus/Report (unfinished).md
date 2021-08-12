@@ -105,7 +105,7 @@ msg:"Inproper input Validation -Dos Attack-";
 flow:to_server,established;
 reference:cve,2013-0699;
 classtype: denial-of-service;
-sid:141231232;
+sid:1;
 pcre:"/([\x00-\xff])([\x00-\xff])(\x00)(\x00)(\x00)(\x06)([\x00-\xff])(\x01)(\x00)(\x00)(\x00)(\x01)/";
 detection_filter:track by_dst, count 10, seconds 1;)
 ```
