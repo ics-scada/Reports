@@ -149,8 +149,9 @@ Accordingly, we can say that there is a rule used for the modicon_command module
 </p>
 
 <br>
-aşağıdaki kısımda da kuralı görcez ve tanıtacaz.
+As in the picture, the following rule is defined in the builtins.rules file in the latest version of snort. If we make a brief definition about the parameters in the rule. The GID (Generator id) is used to identify which part of Snort fires when a particular rule runs. When we want to define a new rule for Snort, we must give values ​​starting from 1,000,000 so that it does not conflict with the existing rules. We also need to use GID with SID. We can think of the SID as the ID of the snort rules. Since Snort has revised 1,000,000 rules, we must start the SID at 1,000,000 when writing our own rules. We should also use SID with REV (revision). REV is the rule revision number. That is, it shows the revision number of a particular rule. The number of revisions increases by one when a rule is improved or a more accurate signature is added. This way we can identify which version of the rule triggered the alert.
 
+<br>
 
 
 ```
@@ -161,6 +162,17 @@ metadata:rule-type preproc;
 classtype:protocol-command-decode;
 )
 ```
+<br>
 
-bu aşağı kısmında da kuralı tanıtıcam ne iş yaptığını nasıl yazıldığını vb.
+The message part is the message that the alarm will show when it is activated. Metadata is used to provide additional information to Snort. Metadata allows the rule writer to add additional information about the rule, usually in key-value form. Metadata information is required if rules are to be written for “well-known” protocols. Otherwise, the relevant port will not be triggered.
 
+<br>
+
+
+<p align="center">
+  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/config_classtype.png">
+</p>
+
+<br>
+
+Classtype is used to categorize an attack whose rule is part of a more general attack class type. In other words, we can think of it as a category that we will choose from the classtype attack set. As seen above, it is defined in the classification.config file.
