@@ -14,13 +14,16 @@ Modbus protocol defines several function codes for accessing Modbus registers. T
 In the module we use, it determines which services are running in these function codes. For ID detection, we can detect the device ID by applying a brute force attack.
 
 
-Explotability
+_Explotability_
+
 This vulnerability can be exploited both remotely and locally.
 
-Existence of Exploit
+_Existence of Exploit_
+
 It is an unmodifiable vulnerability in the Modbus protocol.
 
-Difficulty
+_Difficulty_
+
 An attacker with a medium skill would be able to exploit this vulnerability.
 
 # Affected Produtcs
@@ -112,15 +115,3 @@ Modbus TCP/IP PDU section consists of 2 sections, function code and data. In Mod
 The function code section consists of the code for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the function code corresponding to the request. The length of the function code is 1 byte.
 ##### Data Section
 The data section contains special data for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the response data or error codes to be sent against the request. The data section is of variable length.
-
-
-
-
-
-
-
-
-
-
-
-
