@@ -59,6 +59,7 @@ show options
 We have checked what parameters our exploit needs to run. This exploit needs;<br>
 
 <p align="center">
+  
   <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus_findunit_photos/show_options.PNG">
 </p>
 
@@ -93,13 +94,15 @@ You see the blue part. This packet is the packet to the modbus protocol we want 
 
 Double-clicking on the line will open the package content. 
 
-### Ethernet Header
+
 
 <p align="center">
+  ### Ethernet Header
   <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus_findunit_photos/5.PNG">
+  If we click Ethernet II line the linked parts will be highlighted.  Oranged marked value is destination mac address, yellow marked value is source mac address and purple marked one shows us that the ipv4 protocol is used.
 </p>
 
-If we click Ethernet II line the linked parts will be highlighted.  Oranged marked value is destination mac address, yellow marked value is source mac address and purple marked one shows us that the ipv4 protocol is used.
+
 
 ### IP Header
 
