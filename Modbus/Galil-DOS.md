@@ -25,6 +25,11 @@ The Rio-47100 by Galil is a small PLC with an internal RISC based
 processor. It communicates using ModBus, or Telnet over Ethernet as well as
 having a web server built in that allows a user to issue commands.
 
+| Vendor -- Product  	| Description    | Published      | CVSS Score    |   Source & Patch Info    |
+| ----- | ---------- | --------------- | --------------- | -----------|
+| galil -- pocket_plc|The Galil RIO-47100 Pocket PLC allows remote attackers to cause a denial of service via a session that includes "repeated requests."| 2013-05-01 | [7.1](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2013-0699&vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)&version=2.0&source=NIST)| [CVE-2013-0699](https://nvd.nist.gov/vuln/detail/CVE-2013-0699) |
+
+
 ##### _Explotability_
 This vulnerability could be exploited remotely.
 ##### _Existence of Exploit_
