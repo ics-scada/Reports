@@ -26,7 +26,6 @@ We are going to use modbus_findunitid exploit from metasploit framework.
 ## What does this exploit do?
 The modbus Findunit Metasploit module is a scanner that enumerates Modbus Unit ID and Station ID. This module sends a command with Function Code 0x04 (Read Input Register) to the Modbus endpoint. If the Modbus endpoint contains the correct Modbus Unit ID, it returns a packet with the same Function ID. If not, it would add 0x80 to the Function Code to yield 0x84. This is interpreted as the Exception Code “incorrect/none data from stationID,” because it did not respond correctly to the Read Input Register Function Code , The code 0x80 indicates a Modbus exception response. In a normal response, the Modbus server returns the function code of the request; in an exception response, the function code’s most-significant bit (MSB) is set from 0 to 1. This adds an additional 0x80 to the original function code, which has a value of lower than 0x80. The additional 0x80 in the function code alerts the client to recognize the exception response and examine the data field for the specific exception code.
 
-### _Exploitability_
 
 With this exploit, systems using the modbus protocol can be attacked remotely. 
 
