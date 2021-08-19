@@ -62,9 +62,9 @@ We have checked what parameters our exploit needs to run. This exploit needs;<br
   <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus_findunit_photos/show_options.PNG">
 </p>
 
-`RHOST` = remote host ip address,<br>
+`RHOST` = remote host ip address <br>
 
-paramateres.
+
 
 ```
 set RHOST <ip>
