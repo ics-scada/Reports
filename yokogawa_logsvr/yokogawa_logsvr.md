@@ -95,7 +95,7 @@ After giving the parameters which are wanted we are ready to run it.
 ```
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/run_.png">
+  <img  src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/run_.png">
 </p>
 
 As you can see above, dos attack has started.
@@ -107,20 +107,20 @@ Run wireshark while exploit we’ve use running behind.
 You see the blue part. This packet is the packet to the modbus protocol we want to analyze.
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark1.png">
+  <img width="650" height="350" src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark1.png">
 </p>
 
 
 Double-clicking on the line opens the package contents. As seen above, we can see the destination ip address, source ip address and type in the Ethernet 2 line.
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark2.png">
+  <img width="650" height="350" src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark2.png">
 </p>
 
 IP Header holds network layer information. Of these, it keeps all the details of the IPv4 protocol, which is considered the backbone of the OSI model. There is information on the internet protocol version 4 tab above.
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark4.png">
+  <img width="650" height="350" src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/wireshark4.png">
 </p>
 
 And finally, as you can see above, we see the package content sent in the data line. A total of ten packages are sent. The package includes the area with the blue part and the first eight numbers there |00 04 00 00| and likewise |00 00 00 00 00 00 00 00| the content is fixed in all packages. Rules will be written according to this content used in rule writing.
