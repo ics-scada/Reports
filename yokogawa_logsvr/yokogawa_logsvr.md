@@ -77,6 +77,9 @@ We can see the ModBus Frameworks' modules by typing;
 ```
 # show options
 ```
+<p align="center">
+  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/show_options.png">
+</p>
 
 We have checked what parameters our exploit needs to run. This exploit needs;<br>
 
@@ -90,6 +93,10 @@ After giving the parameters which are wanted we are ready to run it.
 ```
 # run
 ```
+
+<p align="center">
+  <img src="https://github.com/ics-scada/Reports/blob/main/yokogawa_logsvr/img2/run_.png">
+</p>
 
 As you can see above, dos attack has started.
 
