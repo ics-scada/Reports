@@ -117,7 +117,6 @@ The function code section consists of the code for the requested function when s
 The data section contains special data for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the response data or error codes to be sent against the request. The data section is of variable length.
 
 # Snort Rules
-
 ```
 alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Coils Function 1 ";flow:to_server,established; classtype:attempted-recon;sid:3; content: "|01 00 00 00 01|";)
 alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Discreate Inputs Function 2 ";flow:to_server,established; classtype:attempted-recon;sid:4; content: "|02 00 00 00 01|";)
