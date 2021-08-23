@@ -117,3 +117,26 @@ The function code section consists of the code for the requested function when s
 The data section contains special data for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the response data or error codes to be sent against the request. The data section is of variable length.
 
 # Snort Rules
+
+```
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Coils Function 1 ";flow:to_server,established; classtype:attempted-recon;sid:3; content: "|01 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Discreate Inputs Function 2 ";flow:to_server,established; classtype:attempted-recon;sid:4; content: "|02 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Holding Registers Function 3 ";flow:to_server,established; classtype:attempted-recon;sid:5; content: "|03 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Input Registers Function 4 ";flow:to_server,established; classtype:attempted-recon;sid:6; content: "|04 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Write Single Coil Funvtion 5 ";flow:to_server,established; classtype:attempted-recon;sid:7; content: "|05 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Write Single Registers Function 6 ";flow:to_server,established; classtype:attempted-recon;sid:8; content: "|06 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Exception Function 7 ";flow:to_server,established; classtype:attempted-recon;sid:9; content: "|07 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Return Qery Data Function 8 ";flow:to_server,established; classtype:attempted-recon;sid:10; content: "|08 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Get Comm Event Counters Function 11 ";flow:to_server,established; classtype:attempted-recon;sid:11; content: "|0b 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Get Comm Event Log Function 12 ";flow:to_server,established; classtype:attempted-recon;sid:12; content: "|0c 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Write Multiple Coils Function 15 ";flow:to_server,established; classtype:attempted-recon;sid:13; content: "|0f 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Wrtie Multiple Registers Function 16 ";flow:to_server,established; classtype:attempted-recon;sid:14; content: "|10 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Report Slave ID Function 17 ";flow:to_server,established; classtype:attempted-recon;sid:15; content: "|11 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read File Record Function 20 ";flow:to_server,established; classtype:attempted-recon;sid:16; content: "|14 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Write File Record Function 21 ";flow:to_server,established; classtype:attempted-recon;sid:17; content: "|15 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Mask Write Registers Function 22 ";flow:to_server,established; classtype:attempted-recon;sid:18; content: "|16 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read Write Register Function 23 ";flow:to_server,established; classtype:attempted-recon;sid:19; content: "|17 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Read FIFO Queue Function 24 ";flow:to_server,established; classtype:attempted-recon;sid:20; content: "|18 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Encapsulated Interface Transport Function 43 ";flow:to_server,established; classtype:attempted-recon;sid:21; content: "|2b 00 00 00 01|";)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 502(msg:"[Possible Unauthorized Request] Modbus Unity (Schneider) Function 90 ";flow:to_server,established; classtype:attempted-recon;sid:22; content: "|5a 00 00 00 01|";) 
+```
