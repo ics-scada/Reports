@@ -109,6 +109,8 @@ The length section specifies the data length in bytes, which includes the unit d
 ##### Unit Identifier
 This field is used for routing for the system. It is used to identify the remote unit that is not on the network. The volume descriptor part is 1 Byte long.
 
+![Modbus-Protocol](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/Modbus_Protocol.png)
+
 #### Modbus TCP/IP PDU Section
 Modbus TCP/IP PDU section consists of 2 sections, function code and data. In Modbus TCP/IP framing, the Modbus TCP/IP PDU section basically contains the codes for the function.
 ##### Function Code
