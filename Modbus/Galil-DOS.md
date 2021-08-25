@@ -104,9 +104,8 @@ As you can see above, dos attack has started.
 
 ---
 # Rules
+We performed the penetration test with snort on the ubuntu device located on the same network as the victim source but default snort rules did not trigger any alarms. So we wrote a rule that reads the packet at modbus/tcp layer with regex. The rule we added to Snort3 is below. This rule doesn't require Modbus Preprocessors so you can directly add it to your rules file.
 ```
-We performed the penetration test with snort on the ubuntu device located on the same network as the victim source but default snort rules did not trigger any alarms. So we wrote a rule that reads the packet at modbus/tcp layer with regex. The rule we added to Snort3 is below.
-
 alert tcp any any -> $HOME_NET 502 (
 msg:"Inproper input Validation -Dos Attack-";
 flow:to_server,established;
