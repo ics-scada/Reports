@@ -45,6 +45,7 @@ sudo python smod.py
 ![Smod](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/1.PNG)
 
 We can see the ModBus Frameworks’ modules by typing;
+
 ```sh
 show modules
 use modbus/scanner/getfunc
@@ -64,6 +65,7 @@ set UID <uid>
 ![Smod-3](https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/UID%20Detection%20and%20Enumeration%20Function%20on%20Modbus%20Photos/3.PNG)
 
 After giving the parameters which are wanted we are ready to run it.
+
 ```sh
 exploit
 ```
@@ -116,7 +118,7 @@ Modbus TCP/IP PDU section consists of 2 sections, function code and data. In Mod
 ##### Function Code
 The function code section consists of the code for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the function code corresponding to the request. The length of the function code is 1 byte.
 ##### Data Section
-The data section contains special data for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the response data or error codes to be sent against the request. The data section is of variable length.
+The data section contains special data for the requested function when sending a message from the master unit to the slave unit. In response to the master unit from the slave unit, it consists of the response data or error codes to be sent against the request. The data section is of variable length
 
 # Snort Rules
 ```
